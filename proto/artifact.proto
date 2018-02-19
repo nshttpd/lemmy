@@ -5,9 +5,9 @@ package lemmy.build.v1;
 import "google/protobuf/timestamp.proto";
 import "application.proto";
 
-option go_package = "build";
+option go_package = "artifact";
 
-message Build {
+message Artifact {
     uint32 id = 1;
     lemmy.application.v1.Application application = 2;
     string tag_id = 3;
