@@ -1,6 +1,6 @@
-package lemmy.application.v1;
-
 syntax = "proto3";
+
+package lemmy.application.v1;
 
 import "google/api/annotations.proto";
 
