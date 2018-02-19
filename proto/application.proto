@@ -1,0 +1,37 @@
+package lemmy.application.v1;
+
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+option go_package = "application";
+
+message ApplicationList {
+    int32 start = 1;
+    int32 limit = 2;
+    repeated Application applications = 3;
+}
+
+message Application {
+    uint32 id = 1;
+    string app_name = 2;
+    repeated string namespaces = 3;
+    bool scaled = 4;
+}
+
+message ApplicationRequest {
+    Application application = 1;
+}
+
+message ApplicationResponse {
+    Application application = 1;
+}
+
+service ApplicationService {
+    rpc Application(ApplicationRequest) returns (ApplicationResponse) {}
+    rpc ListApplications(ApplicationList) returns (ApplicationList) {
+        option (google.api.http) = {
+            get: "/v1/applications";
+        };
+    }
+}

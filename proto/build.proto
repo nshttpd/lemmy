@@ -1,0 +1,12 @@
+package lemmy.build.v1;
+
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+message Build {
+    uint32 id = 1;
+    Application application = 2;
+    string tag_id = 3;
+    google.protobuf.Timestamp timestamp = 4;
+}
