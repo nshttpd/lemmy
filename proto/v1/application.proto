@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package lemmy.application.v1;
+package lemmy.v1;
 
 import "google/api/annotations.proto";
 
-option go_package = "application";
+option go_package = "application/v1";
 
 message ApplicationList {
     int32 start = 1;
